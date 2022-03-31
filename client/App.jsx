@@ -6,26 +6,8 @@ import ChirpCard from "./components/ChirpCard.jsx";
 const App = () => {
   const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
-  const [chirps, setChirps] = useState([
-    {
-      id: uuidv4(),
-      username: "Josh",
-      message: "This is the chirp body!",
-      created: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
-    },
-    {
-      id: uuidv4(),
-      username: "Haylee",
-      message: "Hello!",
-      created: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
-    },
-    {
-      id: uuidv4(),
-      username: "Garrett",
-      message: "I'm not mad!",
-      created: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
-    },
-  ]);
+  const [chirps, setChirps] = useState();
+
 
   const handleUsernameChange = (e) => setUsername(e.target.value);
   const handleMessageChange = (e) => setMessage(e.target.value);
