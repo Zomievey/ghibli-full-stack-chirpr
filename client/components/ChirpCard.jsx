@@ -1,11 +1,15 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-const ChirpCard = ({username, message, created}) => {
+const ChirpCard = ({ id, username, content, created }) => {
     return (
         <>
             <h3>{username}</h3>
-            <p>{message}</p>
+            <p>{content}</p>
             <small>{created}</small>
+            <Link to={`/chirp/${id}`}>
+               <button className='btn btn-sm btn-dark'>Admin Options</button> 
+            </Link>
         </>
     )
 }

@@ -1,6 +1,6 @@
 import { Query } from "./index";
 
-const all = () => Query("select * from chirps");
+const all = () => Query("select chirps.id, chirps.content, chirps._created, users.name from chirps join users on chirps.userid = users.id");
 
 const one = (id) => Query("select * from chirps where chirps.id = ?", [id]);
 

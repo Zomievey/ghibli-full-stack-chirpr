@@ -18,8 +18,10 @@ export const Query = (query, values) => {
 }
 
 import chirps from "./chirps";
+import users from "./users";
 
 // this becomes db object in routes/chirps.js
 export default {
-    chirps
+    chirps,
+    users
 }
