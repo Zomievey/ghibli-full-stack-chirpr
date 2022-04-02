@@ -21,13 +21,7 @@ const SingleChirp = () => {
 
     const deleteChirp = id => {
         fetch(`http://localhost:3000/api/chirps/${id}`, { method: "DELETE" })
-            .then(res => res.json())
-            .then(res => {
-                console.log(res.ok)
-                // if (res.ok) {
-                //     navigate("/")
-                // }
-            })
+            .then(res => res.ok ? navigate("/") : null)
             .catch(err => console.log(err));
     };
 
@@ -41,12 +35,7 @@ const SingleChirp = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(editChirpBody)
         })
-            .then(res => {
-                console.log(res)
-                // if (res.ok) {
-                //     navigate("/")
-                // }
-            })
+            .then(res => res.ok ? navigate("/") : null)
             .catch(err => console.log(err));
     };
 
